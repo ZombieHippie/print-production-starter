@@ -1,8 +1,7 @@
 src/*.css
+src/*.html
 
 .DS_Store
 *.log
-
-*.html
 
 node_modules

@@ -1,0 +1,39 @@
+$page-width: 17in;
+$page-height: 11in;
+$page-margins: 1in / 8;
+$width: $page-width - 2 * $page-margins;
+$height: $page-height - 2 * $page-margins;
+
+@page {
+  size: $page-width $page-height;
+  margin: $page-margins;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+// Four bits for one number (converting hex -> binary)
+
+.page {
+  page-break-after: always;
+}
+
+body {
+  font-family: Roboto;
+  margin: 0;
+
+  @media screen {
+    .page {
+      padding: $page-margins;
+
+      height: $height;
+      width: $width;
+      border: 4px solid red;
+    }
+    .inch-grid {
+      background-image: url(grid.png);
+      background-size: 1in 1in;
+    }
+  }
+}

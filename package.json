@@ -1,0 +1,23 @@
+{
+  "name": "printing",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Printing things using CSS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all -p gulp server",
+    "gulp": "gulp",
+    "server": "light-server --port 3000 -s ./src -w \"src/*.css, src/*.html\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "light-server": "^1.1.10",
+    "npm-run-all": "^4.0.1",
+    "pug": "^2.0.0-beta10",
+    "typescript": "^2.2.0-dev.20170130"
+  }
+}

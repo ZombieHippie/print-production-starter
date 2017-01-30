@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npm-run-all -p gulp server",
     "gulp": "gulp",
-    "server": "light-server --port 3000 -s ./src -w \"src/*.css, src/*.html\"",
+    "server": "light-server --port 3000 -s ./src -w \"src/*.css # # reloadcss\" -w \"src/*.html # # reload\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -24,22 +24,25 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./src/'))
 })
 
-var pug = require('gulp-pug');
+const pug = require('gulp-pug');
+
+const PUG_CONFIG = {
+  pretty: true,
+  /**
+opts (Object): Any options from Pug's API in addition to pug's own options.
+opts.locals (Object): Locals to compile the Pug with. You can also provide locals through the data field of the file object, e.g. with gulp-data. They will be merged with opts.locals.
+opts.data (Object): Same as opts.locals.
+opts.client (Boolean): Compile Pug to JavaScript code.
+opts.pug: A custom instance of Pug for gulp-pug to use.
+  */
+}
 
 gulp.task('markup', function buildHTML() {
     gulp.src([
       './src/**/*.pug',
       '!./src/**/_*.pug'
     ])
-        .pipe(pug({
-          /**
-opts (Object): Any options from Pug's API in addition to pug's own options.
-opts.locals (Object): Locals to compile the Pug with. You can also provide locals through the data field of the file object, e.g. with gulp-data. They will be merged with opts.locals.
-opts.data (Object): Same as opts.locals.
-opts.client (Boolean): Compile Pug to JavaScript code.
-opts.pug: A custom instance of Pug for gulp-pug to use.
-          */
-        }))
+        .pipe(pug(PUG_CONFIG))
         .pipe(gulp.dest('./src/'))
 });
 
